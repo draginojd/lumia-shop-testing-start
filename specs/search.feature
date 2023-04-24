@@ -7,3 +7,8 @@ Feature: Search
     When I enter the letter "s" in the search field
     Then I should see the product "Bordslampa"
     And I should see the product "Spotlight"
+
+  Scenario: Searching for products including empty or " "
+    Given that I am on the start page
+    When I enter the letter " " in the search field
+    Then I should see no products

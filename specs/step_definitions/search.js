@@ -20,3 +20,6 @@ Then('I should see the product {string}', (productName) => {
     .should('be.visible');
 });
 
+Then('I shouldn\'t see any products', () => {
+  cy.get('.product').should('be.hidden');
+});

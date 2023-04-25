@@ -1,5 +1,18 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
+
+/* Scenario: Searching for products including "t"
+    Given that I am on the start page
+    When I enter the letter "t" in the search field
+    Then I should see the product "Taklampa"
+    And I should see the product "Lampett"
+
+Scenario: Searching for products including "s"
+    Given that I am on the start page
+    When I enter the letter "s" in the search field
+    Then I should see the product "Bordslampa"
+    And I should see the product "Spotlight" */
+
 Given('that I am on the start page', () => {
   // Goto the start page
   cy.visit('/');
@@ -20,6 +33,6 @@ Then('I should see the product {string}', (productName) => {
     .should('be.visible');
 });
 
-Then('I shouldn\'t see any products', () => {
+Then('I should see no products', (letter) => {
   cy.get('.product').should('be.hidden');
 });

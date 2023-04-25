@@ -1,0 +1,97 @@
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+Given('that I am on the start page', () => {
+  // TODO: implement step
+});
+
+When('I enter the letter {string} in the search field', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Given('that I am on the start page', () => {
+  // TODO: implement step
+});
+
+When('I enter the letter {string} in the search field', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Given('that I am on the start page', () => {
+  // TODO: implement step
+});
+
+When('I enter the letter {string} in the search field', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Given('that I am on the start page', () => {
+  // TODO: implement step
+});
+
+When('I enter the letter {string} in the search field', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Given('that I am on the start page', () => {
+  // TODO: implement step
+});
+
+When('I enter the letter {string} in the search field', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see the product {string}', (a) => {
+  // TODO: implement step
+});
+
+Given('that I am on the start page', () => {
+  // TODO: implement step
+});
+
+When('I enter the letter {string} in the search field', (a) => {
+  // TODO: implement step
+});
+
+Then('I should see no products', () => {
+  // TODO: implement step
+});

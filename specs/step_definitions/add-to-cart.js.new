@@ -1,0 +1,17 @@
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+Given('that Im on the start page', () => {
+  // TODO: implement step
+});
+
+Given('entered the letter {string}', (a) => {
+  // TODO: implement step
+});
+
+When('I click on buy button', () => {
+  // TODO: implement step
+});
+
+Then('{string} item should be added to cart', (a) => {
+  // TODO: implement step
+});

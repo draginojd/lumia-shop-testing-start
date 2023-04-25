@@ -8,10 +8,78 @@ Given('entered the letter {string}', (a) => {
   // TODO: implement step
 });
 
-When('I click on buy button', () => {
+When('I click on buy button of the first product', () => {
   // TODO: implement step
 });
 
 Then('{string} item should be added to cart', (a) => {
+  // TODO: implement step
+});
+
+Given('that Im on the start page', () => {
+  // TODO: implement step
+});
+
+Given('entered the letter {string}', (a) => {
+  // TODO: implement step
+});
+
+When('I click on buy button of the first product', () => {
+  // TODO: implement step
+});
+
+Then('{string} item should be added to cart', (a) => {
+  // TODO: implement step
+});
+
+Then('I click on go to Cart', () => {
+  // TODO: implement step
+});
+
+Given('that Im on the start page', () => {
+  // TODO: implement step
+});
+
+Given('entered the letter {string}', (a) => {
+  // TODO: implement step
+});
+
+When('I click on buy button of the first product', () => {
+  // TODO: implement step
+});
+
+Then('{string} item should be added to cart', (a) => {
+  // TODO: implement step
+});
+
+Given('I click on go to Cart', () => {
+  // TODO: implement step
+});
+
+Then('I enter {string} as my name', (a) => {
+  // TODO: implement step
+});
+
+Then('I enter {string} as my home adress', (a) => {
+  // TODO: implement step
+});
+
+Then('I enter {string} as my postal code', (a) => {
+  // TODO: implement step
+});
+
+Then('I enter {string} as my state', (a) => {
+  // TODO: implement step
+});
+
+Then('I enter {string} Card Number as my card Number', (a) => {
+  // TODO: implement step
+});
+
+Then('I enter {string} Date of validation', (a) => {
+  // TODO: implement step
+});
+
+Then('I enter {string} as my CCV code', (a) => {
   // TODO: implement step
 });

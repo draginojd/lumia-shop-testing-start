@@ -44,7 +44,7 @@ When('I enter {string} as my state', () => {
   cy.get("#city").click().type("New York City");
 });
 
-When('I enter {string} Card Number as my card Number', () => {
+When('I enter {string} Card Number as my Card Number', () => {
   cy.get("#card-nr").click().type("403 1525 3525 2535");
 });
 
@@ -61,6 +61,49 @@ When('I click on purchase', () => {
 });
 Then('alert {string} should be shown', () => {
   cy.on("window:alert", alert_message =>
-  expect(alert_message).to.contains("paying 12345")
-);
+    expect(alert_message).to.contains("paying 12345")
+  );
+});
+Given('And I click on checkout', () => {
+  cy.get("#cart button").click();
+});
+
+When('I enter as my name:', (table) => {
+  let list = table.rawTable.map(x => x[0])
+    .map(x => x === "space" ? " " : x);
+  for (let str of list) {
+    cy.log(str);
+  }
+});
+
+When('I enter as my state:', () => {
+
+});
+When('I enter as my Card Number:', (table) => {
+  cy.log(table, "table");
+  let list = table.rawTable.map(x => x[0])
+    .map(x => x === "space" ? " " : x);
+  console.log(list, "list")
+  for (let str of list) {
+    cy.log("", str, typeof str);
+    cy.get("#cart button").eq(1).click().type(str);
+  }
+});
+
+When('I enter Date of validation:', (table) => {
+
+});
+
+When('I enter as my CCV code:', (table) => {
+
+});
+
+When('I click purchase', (table) => {
+
+});
+
+
+
+Then('alert "Please fill out this field"', () => {
+
 });

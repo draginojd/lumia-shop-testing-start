@@ -18,34 +18,49 @@ Then('{string} item should be added to cart', (amount) => {
     .should("exist");
 });
 
-Given('I click on go to Cart', () => {
+Given('That {string} should be added to cart', (amount) => {
+  cy.get("#cart li")
+    .contains(amount + "st")
+    .should("exist");
+
+});
+Given('I click on checkout', () => {
   cy.get("#cart button").click();
 });
 
-Then('I enter {string} as my name',() => {
+When('I enter {string} as my name', () => {
   cy.get("#name").click().type("Peterpan Gustavsson");
 });
 
-Then('I enter {string} as my home adress',  () => {
+When('I enter {string} as my home adress', () => {
   cy.get("#street").click().type("Fifth Avenue");
 });
 
-Then('I enter {string} as my postal code', () => {
+When('I enter {string} as my postal code', () => {
   cy.get("#zip").click().type("402 25");
 });
 
-Then('I enter {string} as my state', () => {
+When('I enter {string} as my state', () => {
   cy.get("#city").click().type("New York City");
 });
 
-Then('I enter {string} Card Number as my card Number', () => {
+When('I enter {string} Card Number as my card Number', () => {
   cy.get("#card-nr").click().type("403 1525 3525 2535");
 });
 
-Then('I enter {string} Date of validation', () => {
+When('I enter {string} Date of validation', () => {
   cy.get("#card-date").click().type("03/26");
 });
 
-Then('I enter {string} as my CCV code', () => {
+When('I enter {string} as my CCV code', () => {
   cy.get("#card-ccv").click().type("979");
+});
+
+When('I click on purchase', () => {
+  cy.get("#checkout button").click();
+});
+Then('alert {string} should be shown', () => {
+  cy.on("window:alert", alert_message =>
+  expect(alert_message).to.contains("paying 12345")
+);
 });

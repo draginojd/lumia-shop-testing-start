@@ -16,70 +16,42 @@ Then('{string} item should be added to cart', (a) => {
   // TODO: implement step
 });
 
-Given('that Im on the start page', () => {
+Given('that {string} item is in the cart', (a) => {
   // TODO: implement step
 });
 
-Given('entered the letter {string}', (a) => {
+When('I click on go to checkout', () => {
   // TODO: implement step
 });
 
-When('I click on buy button of the first product', () => {
+When('I enter {string} as my name', (a) => {
   // TODO: implement step
 });
 
-Then('{string} item should be added to cart', (a) => {
+When('I enter {string} as my home adress', (a) => {
   // TODO: implement step
 });
 
-Then('I click on go to Cart', () => {
+When('I enter {string} as my postal code', (a) => {
   // TODO: implement step
 });
 
-Given('that Im on the start page', () => {
+When('I enter {string} as my state', (a) => {
   // TODO: implement step
 });
 
-Given('entered the letter {string}', (a) => {
+When('I enter {string} Card Number as my card Number', (a) => {
   // TODO: implement step
 });
 
-When('I click on buy button of the first product', () => {
+When('I enter {string} Date of validation', (a) => {
   // TODO: implement step
 });
 
-Then('{string} item should be added to cart', (a) => {
+When('I enter {string} as my CCV code', (a) => {
   // TODO: implement step
 });
 
-Given('I click on go to Cart', () => {
-  // TODO: implement step
-});
-
-Then('I enter {string} as my name', (a) => {
-  // TODO: implement step
-});
-
-Then('I enter {string} as my home adress', (a) => {
-  // TODO: implement step
-});
-
-Then('I enter {string} as my postal code', (a) => {
-  // TODO: implement step
-});
-
-Then('I enter {string} as my state', (a) => {
-  // TODO: implement step
-});
-
-Then('I enter {string} Card Number as my card Number', (a) => {
-  // TODO: implement step
-});
-
-Then('I enter {string} Date of validation', (a) => {
-  // TODO: implement step
-});
-
-Then('I enter {string} as my CCV code', (a) => {
+Then('an alert {string} should be shown', (a) => {
   // TODO: implement step
 });

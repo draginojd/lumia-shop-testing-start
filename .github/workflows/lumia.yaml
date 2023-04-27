@@ -1,44 +1,75 @@
-name: Node.js CI
 
-# Trigger which git action (push, pull_request)
-# in which branch(es) should start the jobs...
 on:
-  push:
+
+  pull_request:
+
+    types: [closed]
+
     branches: [main]
 
-# jobs to run
+
+
 jobs:
-  # build, the name of the job, a server to create and auto configure
-  build:
+
+  deploy:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      # only testing on Node 18 now but could have done
-      # several builds by adding [16.x, 18.x] etc
-      matrix:
-        node-version: [16.x, 18.x]
 
     steps:
-      # action from github marketplace, actions
-      # checkout this repo on the server
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      # action from github marketplace, actions
-      # install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-      # npm ci ≈ read-only from package.json version
-      # of npm install -> installs all npm modules
-      # mentioned in package.json, preferably during CI
-    - run: npm ci
-      # if the project has a npm run build command
-      # then runs (not needed right now but keep)
-    - run: npm run build --if-present
-      # start the application (lumiashop)
-    - run: nohup npm start &
-      # run whatever is specified in package.json
-      # for the script test
-    - run: npm test
+
+      - name: wait for the merge to get to the server 
+
+      # using ssh-action from appleboy
+
+        uses: jakejarvis/wait-action@master
+
+        with:
+
+          time: '60s'
+
+      - name: executing remote ssh commands using password
+
+        uses: appleboy/ssh-action@v0.1.10
+
+        with:
+
+          # using repository secrets
+
+          # for login to your server
+
+          host: ${{ secrets.HOST }}
+
+          username: ${{ secrets.USERNAME }}
+
+          password: ${{ secrets.PASSWORD }}
+
+          port: ${{ secrets.PORT }}
+
+          # commands to run on your server
+
+          # below just an example
+
+          # can be more (like restarting pm2)
+
+          script: |
+
+            echo "cd to correct folder"
+
+            cd /var/www/cypress-cucumber
+
+            echo "git pull"
+
+            git pull
+
+            echo "npm install"
+
+            npm install
+
+            echo "running build if present"
+
+            npm run build --if-present
+
+            echo "restarting app in pm2"
+
+            pm2 restart lumia
